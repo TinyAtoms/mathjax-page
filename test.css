@@ -1,0 +1,16 @@
+
+#equation {
+    width: 50vw;
+    height: 10vh;
+    align-self: center;
+}
+
+
+
+div#result {
+    width: 75vw;
+    height: 80%;
+    margin: 2vh;
+    font-size: 2em;
+
+}

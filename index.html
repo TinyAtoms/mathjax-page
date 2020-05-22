@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathjax equations</title>
+    <link rel="stylesheet" type="text/css" href="test.css">
+</head>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<body>
+    <p>Input your LaTeX equation here and click anywhere outside the box to render it. There are limitations. No multiline code, no environments or custom commands.</p>
+    <a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference"> Latex symbol reference</a>
+    <br>
+        <input id="equation">
+    <div id="result"></div>
+    <script type="text/javascript">
+        const source = document.getElementById('equation');
+        const result = document.getElementById('result');
+
+        const inputHandler = function (e) {
+            result.innerHTML = "\\(" + e.target.value + "\\)";
+            // MathJax.startup.document.state(0);
+            // MathJax.texReset();
+            MathJax.typeset();
+        }
+        source.addEventListener('blur', inputHandler);
+    </script>
+</body>
+</html>
